@@ -1,0 +1,33 @@
+{
+  "name": "testcia",
+  "homepage": "https://github.com/slam24/TestCodeigniterAngular1",
+  "authors": [
+    "slam24 <luismartinez242011@gmail.com>"
+  ],
+  "description": "test",
+  "main": "index.php",
+  "keywords": [
+    "Codeigniter",
+    "Angular1",
+    "restapi",
+    "test",
+    "MySQL",
+    "JavaScript",
+    "Backend",
+    "Frontend",
+    "O.O"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "public/node_modules",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
