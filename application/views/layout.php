@@ -5,8 +5,23 @@
 		<link rel="stylesheet" href="<?php echo base_url('public/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
 		<script src="<?php echo base_url('public/bower_components/jquery/dist/jquery.min.js') ?>"></script>
 		<script src="<?php echo base_url('public/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
+
+		<!-- files angular -->
+		<script src="<?php echo base_url('public/bower_components/angular/angular.min.js') ?>"></script>
+		<script src="<?php echo base_url('public/bower_components/angular-resource/angular-resource.min.js') ?>"></script>
+		<script src="<?php echo base_url('public/bower_components/angular-sanitize/angular-sanitize.min.js') ?>"></script>
+		<!-- files angular -->
+
+		<!-- files angular framework -->
+		<script src="<?php echo base_url('public/js/angular/app.js') ?>"></script>
+		<script src="<?php echo base_url('public/js/angular/constants.js') ?>"></script>
+		<script src="<?php echo base_url('public/js/angular/Controllers.js') ?>"></script>
+		<script src="<?php echo base_url('public/js/angular/Factories.js') ?>"></script>
+		<script src="<?php echo base_url('public/js/angular/Services.js') ?>"></script>
+		<!-- files angular framework -->
+
 	</head>
-	<body>
+	<body ng-app="test">
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
