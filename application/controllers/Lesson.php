@@ -28,4 +28,10 @@ class Lesson extends CI_Controller {
 		$data['contenido'] = "lesson/index";
 		$this->load->view('layout',$data);
 	}
+    public function show($id)
+    {
+       	$data['contenido'] = "lesson/show";
+       	$data['id'] = $id;
+		$this->load->view('layout',$data);
+    }
 }

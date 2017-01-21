@@ -53,4 +53,5 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['/lesson']['get'] = 'lesson/index';
+$route['lesson']['get'] = 'lesson/index';
+$route['lesson/(:num)']['get'] = 'lesson/show/$1';
