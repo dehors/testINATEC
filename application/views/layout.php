@@ -10,6 +10,8 @@
 		<script src="<?php echo base_url('public/bower_components/angular/angular.min.js') ?>"></script>
 		<script src="<?php echo base_url('public/bower_components/angular-resource/angular-resource.min.js') ?>"></script>
 		<script src="<?php echo base_url('public/bower_components/angular-sanitize/angular-sanitize.min.js') ?>"></script>
+		<script src="<?php echo base_url('public/bower_components/angular-sanitize/angular-sanitize.min.js') ?>"></script>
+		<script src="<?php echo base_url('public/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js') ?>"></script>
 		<!-- files angular -->
 
 		<!-- files angular framework -->
