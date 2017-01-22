@@ -55,16 +55,21 @@ angular.module("Controllers",[])
 						}
 						if ($scope.results.R1 == '') {
 							if ($scope.saveTrue == 0) {
-								$scope.create('Results',$scope.hits/2,0,0,0,$scope.results.user_id,$scope.saveTrue);
+								// $scope.create('Results',$scope.hits/2,0,0,0,$scope.results.user_id,$scope.saveTrue);
 								$scope.saveTrue = 1;
 							} else {
-								$scope.edit('Results',$scope.hits/2,$scope.results.R2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
+								// $scope.edit('Results',$scope.hits/2,$scope.results.R2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
 							}
 						} else {
-							$scope.edit('Results',$scope.hits/2,$scope.results.R2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
+							// $scope.edit('Results',$scope.hits/2,$scope.results.R2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
 						}
 						if ($scope.hits == 10) {
-							$scope.info($timeout, Service,'Lesson completed !!!.');
+							$scope.info($timeout, Service,'Lesson completed and saved!!!.');
+							if ($scope.results.R1 == '') {
+								$scope.create('Results',$scope.hits/2,0,0,0,$scope.results.user_id,$scope.saveTrue);
+							}else{
+								$scope.edit('Results',$scope.hits/2,$scope.results.R2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
+							}
 						}else{
 							$scope.success($timeout, Service);
 						}
@@ -146,16 +151,21 @@ angular.module("Controllers",[])
 						}
 						if ($scope.results.R2 == '') {
 							if ($scope.saveTrue == 0) {
-								$scope.create('Results',0,$scope.hits/2,0,0,$scope.results.user_id,$scope.saveTrue);
+								// $scope.create('Results',0,$scope.hits/2,0,0,$scope.results.user_id,$scope.saveTrue);
 								$scope.saveTrue = 1;
 							} else {
-								$scope.edit('Results',$scope.results.R1,$scope.hits/2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
+								// $scope.edit('Results',$scope.results.R1,$scope.hits/2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
 							}
 						} else {
-							$scope.edit('Results',$scope.results.R1,$scope.hits/2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
+							// $scope.edit('Results',$scope.results.R1,$scope.hits/2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
 						}
 						if ($scope.hits == 10) {
-							$scope.info($timeout, Service,'Lesson completed !!!.');
+							$scope.info($timeout, Service,'Lesson completed and saved!!!.');
+							if ($scope.results.R2 == '') {
+								$scope.create('Results',0,$scope.hits/2,0,0,$scope.results.user_id,$scope.saveTrue);
+							}else{
+								$scope.edit('Results',$scope.results.R1,$scope.hits/2,$scope.results.R3,$scope.results.R4,$scope.results.user_id,$scope.results.id_result,$scope.saveTrue);
+							}
 						}else{
 							$scope.success($timeout, Service);
 						}
