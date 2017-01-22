@@ -65,9 +65,6 @@ angular.module("Servicies",[])
 				}
 			},
 			edit: function(entity,R1,R2,R3,R4,user,id_result,saveTrue){
-			console.log('----');
-			console.log('usuario: '+$scope.results.user_id);
-			console.log('resultado: '+$scope.results.id_result);
 				$scope.results = {
 					'results':{
 						'user_id':user,
