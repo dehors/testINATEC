@@ -1,5 +1,5 @@
 angular.module("Servicies",[])
-.service("Service", ['Constants','example',function(Constants,example){
+.service("Service", ['Constants','example','result',function(Constants,example,result){
 	this.msg = function($scope){
 		angular.extend($scope,{
 			msg: {},
@@ -22,9 +22,9 @@ angular.module("Servicies",[])
 				$scope.msg = 'wrong!!!';
 				$scope.msgclose($timeout, Service);
 			},
-			info: function($timeout, Service,msg){
+			info: function($timeout, Service,txt){
 				$scope.msginfo = false;
-				$scope.msg = 'Lesson completed Do you want to restart?';
+				$scope.msg = txt;
 			}
 		});
 	},
@@ -39,6 +39,57 @@ angular.module("Servicies",[])
 						$scope.errorsData(data);
 					});
 				};
+			},
+			create: function(entity,R1,R2,R3,R4,user,saveTrue){
+				$scope.results = {
+					'results':{
+						'user_id':user,
+						'lesson1':R1,
+						'lesson2':R2,
+						'lesson3':R3,
+						'lesson4':R4
+					}
+				}
+				if (entity == 'Results') {
+					result.save($scope.results, function(data){
+						$scope.results.id_result = data.data;
+						$scope.results.user_id = user;
+						$scope.results.R1 = R1;
+						$scope.results.R2 = R2;
+						$scope.results.R3 = R3;
+						$scope.results.R4 = R4;
+						$scope.saveTrue = saveTrue;
+					}, function(data){
+						// console.log(data);
+					});
+				}
+			},
+			edit: function(entity,R1,R2,R3,R4,user,id_result,saveTrue){
+			console.log('----');
+			console.log('usuario: '+$scope.results.user_id);
+			console.log('resultado: '+$scope.results.id_result);
+				$scope.results = {
+					'results':{
+						'user_id':user,
+						'lesson1':R1,
+						'lesson2':R2,
+						'lesson3':R3,
+						'lesson4':R4
+					}
+				}
+				if (entity == 'Results') {
+					result.update({'results':id_result},$scope.results, function(data) {
+						$scope.results.id_result = id_result;
+						$scope.results.user_id = user;
+						$scope.results.R1 = R1;
+						$scope.results.R2 = R2;
+						$scope.results.R3 = R3;
+						$scope.results.R4 = R4;
+						$scope.saveTrue = saveTrue;
+					}, function(data){
+						// console.log(data);
+					});
+				}
 			}
 		});
 	}

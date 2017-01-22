@@ -1,5 +1,19 @@
 <?php $this->load->view('/partial/section_target'); ?>
 <div id="container" ng-controller="lession" class="container" ng-cloak>
+<input type="hidden" id="user_id" value="<?php print_r($user_id[0]) ?>">
+<?php if ($results) { ?>
+	<input type="hidden" id="id_result" value="<?php print_r($results[0]->id) ?>">
+	<input type="hidden" id="results1" value="<?php print_r($results[0]->lesson1) ?>">
+	<input type="hidden" id="results2" value="<?php print_r($results[0]->lesson2) ?>">
+	<input type="hidden" id="results3" value="<?php print_r($results[0]->lesson3) ?>">
+	<input type="hidden" id="results4" value="<?php print_r($results[0]->lesson4) ?>">
+<?php } else{ ?>
+	<input type="hidden" id="id_result" value="">
+	<input type="hidden" id="results1" value="">
+	<input type="hidden" id="results2" value="">
+	<input type="hidden" id="results3" value="">
+	<input type="hidden" id="results4" value="">
+<?php } ?>
 	<div id="body">
 		<div class="row" style="padding-top: 75px;">
 			<span ng-repeat="lesson in lessons">
@@ -29,7 +43,7 @@
 			<br>
 			<div class="row">
 				<a href="#" class="btn btn-info btn-lg btn-block" role="button" ng-click="send(randomQuote.spanish,randomQuote)">Send</a>
-				<a href="#" class="btn btn-primary btn-lg btn-block" role="button">Next</a>
+				<a href="#" class="btn btn-primary btn-lg btn-block" role="button" ng-click="next()">Next</a>
 			</div>
 		</div>
 	</div>

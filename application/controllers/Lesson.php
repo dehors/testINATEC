@@ -7,6 +7,7 @@ class Lesson extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->library(array('ion_auth','form_validation'));
+		$this->load->model('Model_Results');
 	}
 	/**
 	 * Index Page for this controller.
@@ -26,12 +27,15 @@ class Lesson extends CI_Controller {
 	public function index()
 	{
 		$data['contenido'] = "lesson/index";
+		$data['results'] = $this->Model_Results->Show($this->ion_auth->get_user_id());
 		$this->load->view('layout',$data);
 	}
     public function show($id)
     {
        	$data['contenido'] = "lesson/show";
        	$data['id'] = $id;
+       	$data['user_id'] = $this->ion_auth->get_user_id();
+       	$data['results'] = $this->Model_Results->Show($this->ion_auth->get_user_id());
 		$this->load->view('layout',$data);
     }
 }

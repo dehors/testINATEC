@@ -57,4 +57,8 @@ $route['lesson']['get'] = 'lesson/index';
 $route['lesson/(:num)']['get'] = 'lesson/show/$1';
 
 // api/v1
+//examples
 $route['api/v1/examples']['get'] = 'examples/index';
+//results
+$route['api/v1/results']['post'] = 'results/post';
+$route['api/v1/results/(:num)']['put'] = 'results/index/$1';
