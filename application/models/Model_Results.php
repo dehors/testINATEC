@@ -36,6 +36,6 @@ class Model_Results extends CI_Model
 		return $consulta->result();
 	}
 	private function _setResult($result){
-		return array('lesson1' => $result['lesson1'],'lesson2' => $result['lesson2'],'lesson3' => $result['lesson3'],'lesson4' => $result['lesson4'],'user_id' => $result['user_id']);
+		return array('lesson1' => $result['lesson1'],'lesson2' => $result['lesson2'],'lesson3' => $result['lesson3'],'lesson4' => $result['lesson4'],'lesson5' => $result['lesson5'],'user_id' => $result['user_id']);
 	}
 }

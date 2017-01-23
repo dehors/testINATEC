@@ -41,6 +41,14 @@
 									<div class="col-sm-4"><uib-progressbar class="progress-striped active" max="5" value="<?php print_r($results[0]->lesson4) ?>" type="primary"><i><?php print_r($results[0]->lesson4*20) ?>%</i></uib-progressbar></div>
 								</span>
 							</span>
+							<span ng-if="lesson.id == 5">
+								<span ng-if="<?php print_r($results[0]->lesson5) ?> == 5">
+									<div class="col-sm-4"><uib-progressbar class="progress-striped active" max="5" value="<?php print_r($results[0]->lesson5) ?>" type="success"><i><?php print_r($results[0]->lesson5*20) ?>%</i></uib-progressbar></div>
+								</span>
+								<span ng-if="<?php print_r($results[0]->lesson5) ?> != 5">
+									<div class="col-sm-4"><uib-progressbar class="progress-striped active" max="5" value="<?php print_r($results[0]->lesson5) ?>" type="primary"><i><?php print_r($results[0]->lesson5*20) ?>%</i></uib-progressbar></div>
+								</span>
+							</span>
 						<?php } else { ?>
 								<div class="col-sm-4"><uib-progressbar class="progress-striped active" max="5" value="5" type="danger"><i>0%</i></uib-progressbar></div>
 						<?php } ?>

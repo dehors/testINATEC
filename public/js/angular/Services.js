@@ -40,14 +40,15 @@ angular.module("Servicies",[])
 					});
 				};
 			},
-			create: function(entity,R1,R2,R3,R4,user,saveTrue){
+			create: function(entity,R1,R2,R3,R4,R5,user,saveTrue){
 				$scope.results = {
 					'results':{
 						'user_id':user,
 						'lesson1':R1,
 						'lesson2':R2,
 						'lesson3':R3,
-						'lesson4':R4
+						'lesson4':R4,
+						'lesson5':R5
 					}
 				}
 				if (entity == 'Results') {
@@ -58,20 +59,22 @@ angular.module("Servicies",[])
 						$scope.results.R2 = R2;
 						$scope.results.R3 = R3;
 						$scope.results.R4 = R4;
+						$scope.results.R5 = R5;
 						$scope.saveTrue = saveTrue;
 					}, function(data){
 						// console.log(data);
 					});
 				}
 			},
-			edit: function(entity,R1,R2,R3,R4,user,id_result,saveTrue){
+			edit: function(entity,R1,R2,R3,R4,R5,user,id_result,saveTrue){
 				$scope.results = {
 					'results':{
 						'user_id':user,
 						'lesson1':R1,
 						'lesson2':R2,
 						'lesson3':R3,
-						'lesson4':R4
+						'lesson4':R4,
+						'lesson5':R5
 					}
 				}
 				if (entity == 'Results') {
@@ -82,6 +85,7 @@ angular.module("Servicies",[])
 						$scope.results.R2 = R2;
 						$scope.results.R3 = R3;
 						$scope.results.R4 = R4;
+						$scope.results.R5 = R5;
 						$scope.saveTrue = saveTrue;
 					}, function(data){
 						// console.log(data);
@@ -121,6 +125,8 @@ angular.module("Servicies",[])
 				}
 			],
 			displayVars: function(examples){
+				$scope.type = Math.floor(Math.random() * $scope.lessons.length);
+				$scope.type = $scope.lessons[$scope.type].id;
 				$scope.auxSelectImg = [];
 				$scope.aux = [];
 				var aux = 0;
@@ -148,7 +154,6 @@ angular.module("Servicies",[])
 					if ($scope.optionCompleted.type != 0) {
 						i++;
 					}
-					console.log(i);
 				}while(i <= 0);
 				$scope.aux = $scope.optionCompleted.english.split(' ');
 
