@@ -142,6 +142,32 @@ angular.module("Servicies",[])
 					$scope.auxSelectImg.push(examples[aux]);
 				}
 				$scope.optionSelect = $scope.auxSelectImg[Math.floor(Math.random() * $scope.auxSelectImg.length)];
+				do{
+					i = 0
+					$scope.optionCompleted = $scope.auxSelectImg[Math.floor(Math.random() * $scope.auxSelectImg.length)];
+					if ($scope.optionCompleted.type != 0) {
+						i++;
+					}
+					console.log(i);
+				}while(i <= 0);
+				$scope.aux = $scope.optionCompleted.english.split(' ');
+
+				$scope.optionCompletedS = '';
+				if ($scope.optionCompleted.type == 1) {
+					$scope.optionCompletedF = $scope.aux[0];
+					angular.forEach($scope.aux,function(value,index){
+						if (index != 0 && index != 1) {
+							$scope.optionCompletedS = $scope.optionCompletedS +' '+ value;
+						}
+					});
+				}else{
+					angular.forEach($scope.aux,function(value,index){
+						if (index != 0) {
+							$scope.optionCompletedS = $scope.optionCompletedS +' '+ value;
+						}
+					});
+				}
+
 				$scope.randomQuote = examples[Math.floor(Math.random() * examples.length)];
 			}
 		});
