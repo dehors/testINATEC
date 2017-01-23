@@ -34,7 +34,7 @@ angular.module("Servicies",[])
 				if (entity == 'Examples') {
 					example.query({'token':''}, function(data){
 						$scope.examples = data.data;
-						$scope.randomQuote = $scope.examples[Math.floor(Math.random() * $scope.examples.length)];
+						$scope.displayVars($scope.examples);						
 					}, function(data){
 						$scope.errorsData(data);
 					});
@@ -113,8 +113,37 @@ angular.module("Servicies",[])
 					id: '4',
 					title: 'Lession #4',
 					content: '<p>Information of the lession</p>'
+				},
+				{
+					id: '5',
+					title: 'Lession #5',
+					content: '<p>Information of the lession</p>'
 				}
-			]
+			],
+			displayVars: function(examples){
+				$scope.auxSelectImg = [];
+				$scope.aux = [];
+				var aux = 0;
+				for (var i = 0 ; i < 3; i++) {
+
+					var x = 0;
+					do {
+						aux = Math.floor(Math.random() * examples.length);
+						x = 0;
+						angular.forEach($scope.aux, function(value){
+							if (examples[aux].id == examples[value].id) {
+								x = 1;
+							}
+						});
+					}
+					while (x > 0);
+
+					$scope.aux = [aux];
+					$scope.auxSelectImg.push(examples[aux]);
+				}
+				$scope.optionSelect = $scope.auxSelectImg[Math.floor(Math.random() * $scope.auxSelectImg.length)];
+				$scope.randomQuote = examples[Math.floor(Math.random() * examples.length)];
+			}
 		});
 	}
 }]);
