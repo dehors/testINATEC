@@ -56,6 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['lesson']['get'] = 'lesson/index';
 $route['lesson/(:num)']['get'] = 'lesson/show/$1';
 
+$route['handlebars']['get'] = 'handlebars/index';
+
 // api/v1
 //examples
 $route['api/v1/examples']['get'] = 'examples/index';

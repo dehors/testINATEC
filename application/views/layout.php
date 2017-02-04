@@ -22,6 +22,10 @@
 		<script src="<?php echo base_url('public/js/angular/Services.js') ?>"></script>
 		<!-- files angular framework -->
 
+		<!-- files handlebars -->
+		<script src="<?php echo base_url('public/bower_components/handlebars/handlebars.min.js') ?>"></script>		
+		<!-- files handlebars -->
+
 	</head>
 	<body ng-app="test">
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -46,6 +50,7 @@
 						<li class="active"><a href="<?php echo base_url('/') ?>">Home <span class="sr-only">(current)</span></a></li>
 						<?php if($this->ion_auth->logged_in()){ ?>
 							<li><a href="<?php echo base_url('/lesson') ?>">Lessons <span class="sr-only">(current)</span></a></li>
+							<li><a href="<?php echo base_url('/handlebars') ?>">Handlebars <span class="sr-only">(current)</span></a></li>
 						<?php } ?>
 						<!-- <li><a href="#">Link</a></li>
 						<li class="dropdown">
@@ -96,5 +101,6 @@
 		<footer>
 			<center style="background: wheat;">https://github.com/slam24/TestCodeigniterAngular1</center>
 		</footer>
+
 	</body>
 </html>
